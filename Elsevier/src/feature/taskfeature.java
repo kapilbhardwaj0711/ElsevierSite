@@ -4,12 +4,15 @@ import java.util.Iterator;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.Reporter;
 
+import Page.object.BasePage;
 import Page.object.CreateNewCustomerAccountPage;
 import Page.object.LoginPage;
 
@@ -19,17 +22,19 @@ public class taskfeature
    WebDriver driver;
    LoginPage lp;
    CreateNewCustomerAccountPage cca;
+   BasePage bp;
    
    public taskfeature(WebDriver driver)
    {
 	   this.driver=driver;
 	   lp= new LoginPage(driver);
 	   cca= new CreateNewCustomerAccountPage(driver);
-	   
+	   bp= new BasePage(driver);
    }
    
    public void ValidLogin(String username , String password) throws Exception
    {
+	   
 	   lp.getUsricon().click();
 	   lp.getSignInbtn().click();
 	   Thread.sleep(2000);
@@ -92,6 +97,33 @@ public class taskfeature
  	  Assert.assertEquals(driver.findElement(By.xpath("//div[text()='Thank you for registering with Elsevier Asia Bookstore.']")).getText(), expected);
 	  
    }
-   
+   public void ExistingUserproductPurchase(String username,String password,String product) throws Exception
+   {
+	   ValidLogin(username, password);
+	   System.out.println(product);
+	   bp.getSearchBar().sendKeys(product,Keys.ENTER);
+	   Thread.sleep(2000);
+	   List<WebElement> links = driver.findElements(By.xpath("//a"));
+	   
+	   Iterator<WebElement> itr = links.iterator();
+	   while(itr.hasNext())
+	   {
+		   WebElement txt = itr.next();
+		   if (product.equalsIgnoreCase(txt.getText())) 
+		   {
+			   txt.click();
+			   break;
+			   
+		   }
+	   }
+	   
+	   bp.getAddToCartbtn().click();
+	   bp.getMycartIcon().click();
+	   bp.getViewCartBtn().click();
+	   bp.getProceedTochckBtn().click();
+
+	 }
 }
+   
+
 

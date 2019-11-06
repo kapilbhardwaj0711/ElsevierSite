@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
     <line>
-      <![CDATA[suite is executed Mon Nov 04 10:45:39 IST 2019]]>
+      <![CDATA[suite is executed Wed Nov 06 15:40:22 IST 2019]]>
     </line>
     <line>
       <![CDATA[chrome Launched]]>
@@ -11,33 +11,24 @@
       <![CDATA[https://www.store.elsevierhealth.com/asia/ url is navigated]]>
     </line>
     <line>
-      <![CDATA[validLogin script execustion startsMon Nov 04 10:45:49 IST 2019]]>
+      <![CDATA[purchaseProduct script execustion startsWed Nov 06 15:40:34 IST 2019]]>
     </line>
     <line>
       <![CDATA[My Account]]>
     </line>
     <line>
-      <![CDATA[validLogin script is passed]]>
+      <![CDATA[purchaseProduct script is passed]]>
     </line>
     <line>
-      <![CDATA[chrome Launched]]>
-    </line>
-    <line>
-      <![CDATA[https://www.store.elsevierhealth.com/asia/ url is navigated]]>
-    </line>
-    <line>
-      <![CDATA[invalidLogin script execustion startsMon Nov 04 10:46:08 IST 2019]]>
-    </line>
-    <line>
-      <![CDATA[invalidLogin script is passed]]>
+      <![CDATA[browser closed]]>
     </line>
   </reporter-output>
-  <suite name="Suite" duration-ms="35811" started-at="2019-11-04T05:15:39Z" finished-at="2019-11-04T05:16:15Z">
+  <suite name="Suite" duration-ms="33406" started-at="2019-11-06T15:40:22 IST" finished-at="2019-11-06T15:40:56 IST">
     <groups>
     </groups>
-    <test name="Test" duration-ms="35811" started-at="2019-11-04T05:15:39Z" finished-at="2019-11-04T05:16:15Z">
-      <class name="Script.Loginscript">
-        <test-method status="PASS" signature="precondition(java.lang.String, java.lang.String)[pri:0, instance:Script.Loginscript@e25b2fe]" name="precondition" is-config="true" duration-ms="9870" started-at="2019-11-04T05:15:39Z" finished-at="2019-11-04T05:15:49Z">
+    <test name="Test" duration-ms="33406" started-at="2019-11-06T15:40:22 IST" finished-at="2019-11-06T15:40:56 IST">
+      <class name="Script.ExistingUserProductPurchase">
+        <test-method status="PASS" signature="precondition(java.lang.String, java.lang.String)[pri:0, instance:Script.ExistingUserProductPurchase@68bbe345]" name="precondition" is-config="true" duration-ms="11703" started-at="2019-11-06T15:40:23 IST" finished-at="2019-11-06T15:40:34 IST">
           <params>
             <param index="0">
               <value>
@@ -59,52 +50,27 @@
             </line>
           </reporter-output>
         </test-method> <!-- precondition -->
-        <test-method status="PASS" signature="validLogin()[pri:1, instance:Script.Loginscript@e25b2fe]" name="validLogin" duration-ms="7270" started-at="2019-11-04T05:15:49Z" finished-at="2019-11-04T05:15:56Z">
+        <test-method status="PASS" signature="purchaseProduct()[pri:0, instance:Script.ExistingUserProductPurchase@68bbe345]" name="purchaseProduct" duration-ms="20535" started-at="2019-11-06T15:40:34 IST" finished-at="2019-11-06T15:40:55 IST">
           <reporter-output>
             <line>
-              <![CDATA[validLogin script execustion startsMon Nov 04 10:45:49 IST 2019]]>
+              <![CDATA[purchaseProduct script execustion startsWed Nov 06 15:40:34 IST 2019]]>
             </line>
             <line>
               <![CDATA[My Account]]>
             </line>
             <line>
-              <![CDATA[validLogin script is passed]]>
+              <![CDATA[purchaseProduct script is passed]]>
             </line>
           </reporter-output>
-        </test-method> <!-- validLogin -->
-        <test-method status="PASS" signature="precondition(java.lang.String, java.lang.String)[pri:0, instance:Script.Loginscript@e25b2fe]" name="precondition" is-config="true" duration-ms="11409" started-at="2019-11-04T05:15:56Z" finished-at="2019-11-04T05:16:08Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[https://www.store.elsevierhealth.com/asia/]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- purchaseProduct -->
+        <test-method status="PASS" signature="postcondition()[pri:0, instance:Script.ExistingUserProductPurchase@68bbe345]" name="postcondition" is-config="true" duration-ms="1092" started-at="2019-11-06T15:40:55 IST" finished-at="2019-11-06T15:40:56 IST">
           <reporter-output>
             <line>
-              <![CDATA[chrome Launched]]>
-            </line>
-            <line>
-              <![CDATA[https://www.store.elsevierhealth.com/asia/ url is navigated]]>
+              <![CDATA[browser closed]]>
             </line>
           </reporter-output>
-        </test-method> <!-- precondition -->
-        <test-method status="PASS" signature="invalidLogin()[pri:2, instance:Script.Loginscript@e25b2fe]" name="invalidLogin" duration-ms="7188" started-at="2019-11-04T05:16:08Z" finished-at="2019-11-04T05:16:15Z">
-          <reporter-output>
-            <line>
-              <![CDATA[invalidLogin script execustion startsMon Nov 04 10:46:08 IST 2019]]>
-            </line>
-            <line>
-              <![CDATA[invalidLogin script is passed]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- invalidLogin -->
-      </class> <!-- Script.Loginscript -->
+        </test-method> <!-- postcondition -->
+      </class> <!-- Script.ExistingUserProductPurchase -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

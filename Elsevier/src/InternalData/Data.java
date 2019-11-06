@@ -16,6 +16,7 @@ public interface Data
 	final String orgname="compunnel";
 	final String dateNbirth="17/11/1990";
 	final String telephone ="9821456875";
+	final String product ="Radiologic Science for Technologists";
 	
 	
 	
