@@ -2,19 +2,28 @@ package feature;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
 
+import Page.object.AddNewAddressPage;
+import Page.object.AddressBookPage;
 import Page.object.BasePage;
 import Page.object.CreateNewCustomerAccountPage;
+import Page.object.EditAddressPage;
 import Page.object.LoginPage;
+import Page.object.MyAccountPage;
+import okhttp3.Address;
 
 
 public class taskfeature 
@@ -23,19 +32,25 @@ public class taskfeature
    LoginPage lp;
    CreateNewCustomerAccountPage cca;
    BasePage bp;
-   
+   MyAccountPage mac;
+   EditAddressPage eap;
+   AddressBookPage abp;
+   AddNewAddressPage anap;
    public taskfeature(WebDriver driver)
    {
 	   this.driver=driver;
 	   lp= new LoginPage(driver);
 	   cca= new CreateNewCustomerAccountPage(driver);
 	   bp= new BasePage(driver);
+	   mac= new MyAccountPage(driver);
+	   eap= new EditAddressPage(driver);
+	   anap = new AddNewAddressPage(driver);
    }
    
    public void ValidLogin(String username , String password) throws Exception
    {
 	   
-	   lp.getUsricon().click();
+	   lp.getUsrico().click();
 	   lp.getSignInbtn().click();
 	   Thread.sleep(2000);
 	   lp.getUntxtb().sendKeys(username);
@@ -49,7 +64,7 @@ public class taskfeature
    }
    public void invalidLogin(String username1,String password1) throws Exception
    {
-	   lp.getUsricon().click();
+	   lp.getUsrico().click();
 	   lp.getSignInbtn().click();
 	   Thread.sleep(2000);
 	   lp.getUntxtb().sendKeys(username1);
@@ -62,7 +77,7 @@ public class taskfeature
    }
    public void CreateCust(String firstname ,String lastname,String emailaddess,String passwrd,String cpasswrd,String dateNbirth,String telephone) throws InterruptedException
    {
-	  lp.getUsricon().click();
+	  lp.getUsrico().click();
 	  lp.getCreateAc().click();
 	  Thread.sleep(1000);
  	  
@@ -91,16 +106,15 @@ public class taskfeature
  	  sel1.selectByIndex(2);
  	  cca.getChckbx().click();
 
- 	  cca.getRegistrBtn().click();
+ /*	  cca.getRegistrBtn().click();
  	  Thread.sleep(5000);
  	  String expected ="Thank you for registering with Elsevier Asia Bookstore.";
  	  Assert.assertEquals(driver.findElement(By.xpath("//div[text()='Thank you for registering with Elsevier Asia Bookstore.']")).getText(), expected);
-	  
+*/	  
    }
    public void ExistingUserproductPurchase(String username,String password,String product) throws Exception
    {
 	   ValidLogin(username, password);
-	   System.out.println(product);
 	   bp.getSearchBar().sendKeys(product,Keys.ENTER);
 	   Thread.sleep(2000);
 	   List<WebElement> links = driver.findElements(By.xpath("//a"));
@@ -113,16 +127,97 @@ public class taskfeature
 		   {
 			   txt.click();
 			   break;
-			   
 		   }
 	   }
-	   
 	   bp.getAddToCartbtn().click();
 	   bp.getMycartIcon().click();
 	   bp.getViewCartBtn().click();
+	   Thread.sleep(2000);
 	   bp.getProceedTochckBtn().click();
+	   String title = driver.getTitle();
+	   System.out.println(title);
+	   Thread.sleep(10000);
 
 	 }
+   
+   
+   public void EditBillingAddress(String username, String password,String street,String city,String state,String zip,String country) throws Exception
+   {
+	 ValidLogin(username, password); 
+	 mac.getMangeAcBtn().click();
+	 
+	 Thread.sleep(5000);
+	 abp.getChangeBillAddbt().click();
+	 Thread.sleep(2000);
+	 eap.getStreet1().sendKeys(Keys.CONTROL,"a");
+	 eap.getStreet1().sendKeys(Keys.DELETE);
+	 eap.getStreet1().sendKeys(street);
+	 
+	 eap.getCity().sendKeys(Keys.CONTROL,"a");
+	 eap.getCity().sendKeys(Keys.DELETE);
+	 eap.getCity().sendKeys(city);
+	 
+	 eap.getZipcode().sendKeys(Keys.CONTROL,"a");
+	 eap.getZipcode().sendKeys(Keys.DELETE);
+	 eap.getZipcode().sendKeys(zip);
+	 
+	 Thread.sleep(1000);
+	 Select sel = new Select(eap.getCountry());
+	 sel.selectByVisibleText(country);
+	 
+
+	 Select sel1= new Select(eap.getStateDrpDwn());
+	 sel1.selectByVisibleText(state);
+	 eap.getSubmit().click();
+	 
+	 Thread.sleep(3000);
+	 Assert.assertEquals("You saved the address.", driver.findElement(By.xpath("//div[@data-bind='html: message.text']")).getText());
+   
+   }
+   
+   public void addnewAdress(String username, String password,String company,String telephone,String street,String city,String zip,String country,String state) throws Exception
+   {
+	   ValidLogin(username, password);
+	   mac.getMangeAcBtn().click();
+	   
+	   Thread.sleep(3000);
+	   String txt = driver.findElement(By.xpath("//div[@class='primary']/button/span[text()='Add New Address'][1]")).getText();
+	   if ("Add New Address".equalsIgnoreCase(txt)) 
+	   {
+		   driver.findElement(By.xpath("//div[@class='primary']/button/span[text()='Add New Address'][1]")).click();
+	   }
+	   
+/*	   try 
+	   {
+		   driver.findElement(By.xpath("//div[@class='primary']/button/span[text()='Add New Address'][1]"));
+		
+	   } 
+	   catch (Exception e) 
+	   {
+		 //  abp.getAddnewAddressbtn().click();
+		   driver.findElement(By.xpath("//div[@class='primary']/button/span[text()='Add New Address'][1]")).click();
+	   }
+*/
+	   Thread.sleep(2000);
+	   anap.getCompanyName().sendKeys(company);
+	   anap.getTelephone().sendKeys(telephone);
+	   eap.getStreet1().sendKeys(street);
+	   eap.getCity().sendKeys(city);
+	   eap.getZipcode().sendKeys(zip);
+	   Thread.sleep(1000);
+	   
+	   Select sel = new Select(eap.getCountry());
+	   sel.selectByVisibleText(country);
+	   
+	   Thread.sleep(1000);
+	   Select sel1= new Select(eap.getStateDrpDwn());
+	   sel1.selectByVisibleText(state);
+	   eap.getSubmit().click();
+	   Thread.sleep(3000);
+	   Assert.assertEquals("You saved the address.", driver.findElement(By.xpath("//div[@data-bind='html: message.text']")).getText());
+	   
+
+   }
 }
    
 

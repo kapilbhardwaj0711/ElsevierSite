@@ -1,7 +1,7 @@
 package Generic.elsevier.com;
 
 import java.io.File;
-import java.time.LocalTime;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import java.util.Map;
@@ -30,9 +30,10 @@ public class extant implements IReporter
 	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites,
 			String outputDirectory) 
 	{
+		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 		
-		extent = new ExtentReports(outputDirectory + File.separator
-				+ "extent.html", true);
+		extent = new ExtentReports("./Reports/" + File.separator
+				+ timeStamp+ " -ExtentReport.html", true);
 
 		for (ISuite suite : suites) 
 		{

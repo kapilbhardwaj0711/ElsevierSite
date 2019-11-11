@@ -9,7 +9,7 @@ import lombok.Getter;
 public class LoginPage 
 {
 		@FindBy(className="user_icon")
-		private @Getter WebElement usricon;
+		private @Getter WebElement usrico;
 		@FindBy(linkText="Sign In")
 		private @Getter WebElement signInbtn;
 		@FindBy(id="email")

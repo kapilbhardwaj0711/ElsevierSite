@@ -16,9 +16,11 @@ public interface Data
 	final String orgname="compunnel";
 	final String dateNbirth="17/11/1990";
 	final String telephone ="9821456875";
-	final String product ="Radiologic Science for Technologists";
-	
-	
-	
-	
+	final String product ="Robbins Basic Pathology";
+	final String street="noidastudio";
+	final String city="Chandigarh";;
+	final String state="Chandigarh";
+	final String zip="110077";
+	final String country="India";
+	final String company="jobkart";
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests" thread-count="3" >
+<listeners>
+<listener class-name="Generic.elsevier.com.MyTestNGListner"/>
+<listener class-name="Generic.elsevier.com.extant"/>
+</listeners>
+  <test name="Test"  thread-count="3">
+  <parameter name ="browser" value="chrome"/>
+  <parameter name ="baseurl" value="https://www.store.elsevierhealth.com/asia/"/>
+   <classes>
+      <class name="Script.AddAdress"/>
+    </classes>
+  </test> 
+</suite> 
