@@ -12,8 +12,9 @@ public class AddressBookPage
 	@FindBy(xpath = "//div[@data-bind='html: message.text']")
 	private @Getter WebElement successmsg;
 	 
-	@FindBy(xpath = "//div[@class='box box-address-billing']//span[text()='Change Billing Address']")
-	private @Getter WebElement changeBillAddbt;
+	//@FindBy(linkText =  "Change Billing Address")
+	@FindBy(xpath = "//*[@id='maincontent']/div[2]/div[1]/div[4]/div[2]/div[1]/div[2]/a/span")
+	private @Getter WebElement changeBillbtn;
 	
 	@FindBy(className = "action primary add")
 	private @Getter WebElement AddnewAddressbtn;

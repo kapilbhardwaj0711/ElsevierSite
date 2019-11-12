@@ -8,6 +8,7 @@ public interface Data
 	final String username1="kapil.bhardwaj@infoprolearning.com";
 	final String password1="infopro";
 	
+	
 	final String firstname ="rahul";
 	final String lastname ="kumar";
 	final String emailaddess="pardee@gmail.com";
@@ -23,4 +24,5 @@ public interface Data
 	final String zip="110077";
 	final String country="India";
 	final String company="jobkart";
+	final String Guestemail="test107@gmail.com";
 }

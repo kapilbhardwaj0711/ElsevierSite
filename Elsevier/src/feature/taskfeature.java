@@ -21,6 +21,7 @@ import Page.object.AddressBookPage;
 import Page.object.BasePage;
 import Page.object.CreateNewCustomerAccountPage;
 import Page.object.EditAddressPage;
+import Page.object.GuestUserCheckOutPage;
 import Page.object.LoginPage;
 import Page.object.MyAccountPage;
 import okhttp3.Address;
@@ -36,6 +37,7 @@ public class taskfeature
    EditAddressPage eap;
    AddressBookPage abp;
    AddNewAddressPage anap;
+   GuestUserCheckOutPage gucp;
    public taskfeature(WebDriver driver)
    {
 	   this.driver=driver;
@@ -45,6 +47,7 @@ public class taskfeature
 	   mac= new MyAccountPage(driver);
 	   eap= new EditAddressPage(driver);
 	   anap = new AddNewAddressPage(driver);
+	   gucp= new GuestUserCheckOutPage(driver);
    }
    
    public void ValidLogin(String username , String password) throws Exception
@@ -134,20 +137,74 @@ public class taskfeature
 	   bp.getViewCartBtn().click();
 	   Thread.sleep(2000);
 	   bp.getProceedTochckBtn().click();
-	   String title = driver.getTitle();
-	   System.out.println(title);
-	   Thread.sleep(10000);
+	   String title = "Checkout";
+	   Assert.assertEquals(driver.getTitle(), title);
+	   
 
 	 }
    
+   public void GuestUserProductPurchase(String username,String password,String product,
+		   String Guestemail,String firstname,String lastname,String street,String company,String city,
+		   	String state,String zip,String country,String telephone)throws Exception
+   {
+	   bp.getSearchBar().sendKeys(product,Keys.ENTER);
+	   Thread.sleep(2000);
+	   List<WebElement> links = driver.findElements(By.xpath("//a"));
+	   
+	   Iterator<WebElement> itr = links.iterator();
+	   while(itr.hasNext())
+	   {
+		   WebElement txt = itr.next();
+		   if (product.equalsIgnoreCase(txt.getText())) 
+		   {
+			   txt.click();
+			   break;
+		   }
+	   }
+	   bp.getAddToCartbtn().click();
+	   bp.getMycartIcon().click();
+	   bp.getViewCartBtn().click();
+	   Thread.sleep(2000);
+	   bp.getProceedTochckBtn().click();
+	   Thread.sleep(2000);
+	   gucp.getGemail().sendKeys(Guestemail);
+	   Thread.sleep(1000);
+	   gucp.getGFname().sendKeys(firstname);
+	   gucp.getGLname().sendKeys(lastname);
+	   gucp.getGStreet().sendKeys(street);
+	   gucp.getGCompany().sendKeys(company);
+	   gucp.getGCity().sendKeys(city);
+	   gucp.getGZip().sendKeys(zip);
+	   gucp.getGPhone().sendKeys(telephone);
+	   
+	   Thread.sleep(1000);
+	   Select sel = new Select(gucp.getGCountry());
+	   sel.selectByVisibleText(country);
+			   
+	   Thread.sleep(2000);
+	   Select sel1 = new Select(gucp.getGState());
+	   sel1.selectByVisibleText(state);
+	   
+	   Thread.sleep(1000);	  
+	   gucp.getGNextBtn().click();
+	   
+	   String expected="Checkout";
+	   Assert.assertEquals(driver.getTitle(), expected);
+	   
+   }
+   
+
    
    public void EditBillingAddress(String username, String password,String street,String city,String state,String zip,String country) throws Exception
    {
 	 ValidLogin(username, password); 
 	 mac.getMangeAcBtn().click();
+	 Thread.sleep(1000);
+//	 abp.getChangeBillbtn().click();
+	 driver.findElement(By.linkText("Change Billing Address")).click();
+//	 driver.findElement(By.xpath("//a[@class='action edit']/span[text()='Change Billing Address']")).click();
+//	 System.out.println(abp.getChnageBillbtn().getText());
 	 
-	 Thread.sleep(5000);
-	 abp.getChangeBillAddbt().click();
 	 Thread.sleep(2000);
 	 eap.getStreet1().sendKeys(Keys.CONTROL,"a");
 	 eap.getStreet1().sendKeys(Keys.DELETE);

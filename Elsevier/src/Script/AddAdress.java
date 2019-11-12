@@ -14,7 +14,7 @@ public class AddAdress extends baseLib implements Data
 		taskfeature tf = new taskfeature(driver);
 		tf.EditBillingAddress(username, password, street, city, state, zip, country);
 	}
-	@Test(enabled = false,priority = 2)
+	@Test(priority = 2)
 	public void addNewaddress() throws Exception
 	{
 		taskfeature tf = new taskfeature(driver);

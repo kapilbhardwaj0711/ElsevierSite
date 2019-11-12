@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="1" total="2" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
     <line>
-      <![CDATA[suite is executed Mon Nov 11 18:10:44 IST 2019]]>
+      <![CDATA[suite is executed Tue Nov 12 16:14:27 IST 2019]]>
     </line>
     <line>
       <![CDATA[chrome Launched]]>
@@ -11,21 +11,33 @@
       <![CDATA[https://www.store.elsevierhealth.com/asia/ url is navigated]]>
     </line>
     <line>
-      <![CDATA[editbilladress script execustion startsMon Nov 11 18:10:51 IST 2019]]>
+      <![CDATA[purchaseProduct script execustion startsTue Nov 12 16:14:41 IST 2019]]>
     </line>
     <line>
       <![CDATA[My Account]]>
     </line>
     <line>
-      <![CDATA[editbilladress script is failed]]>
+      <![CDATA[purchaseProduct script is passed]]>
+    </line>
+    <line>
+      <![CDATA[chrome Launched]]>
+    </line>
+    <line>
+      <![CDATA[https://www.store.elsevierhealth.com/asia/ url is navigated]]>
+    </line>
+    <line>
+      <![CDATA[GuestUserProductPurchase script execustion startsTue Nov 12 16:15:19 IST 2019]]>
+    </line>
+    <line>
+      <![CDATA[GuestUserProductPurchase script is passed]]>
     </line>
   </reporter-output>
-  <suite name="Suite" duration-ms="19834" started-at="2019-11-11T18:10:44 IST" finished-at="2019-11-11T18:11:04 IST">
+  <suite name="Suite" duration-ms="74267" started-at="2019-11-12T16:14:27 IST" finished-at="2019-11-12T16:15:41 IST">
     <groups>
     </groups>
-    <test name="Test" duration-ms="19834" started-at="2019-11-11T18:10:44 IST" finished-at="2019-11-11T18:11:04 IST">
-      <class name="Script.AddAdress">
-        <test-method status="PASS" signature="precondition(java.lang.String, java.lang.String)[pri:0, instance:Script.AddAdress@9660f4e]" name="precondition" is-config="true" duration-ms="7056" started-at="2019-11-11T18:10:44 IST" finished-at="2019-11-11T18:10:51 IST">
+    <test name="Test" duration-ms="74267" started-at="2019-11-12T16:14:27 IST" finished-at="2019-11-12T16:15:41 IST">
+      <class name="Script.UserProductPurchase">
+        <test-method status="PASS" signature="precondition(java.lang.String, java.lang.String)[pri:0, instance:Script.UserProductPurchase@9660f4e]" name="precondition" is-config="true" duration-ms="13878" started-at="2019-11-12T16:14:27 IST" finished-at="2019-11-12T16:14:41 IST">
           <params>
             <param index="0">
               <value>
@@ -47,51 +59,52 @@
             </line>
           </reporter-output>
         </test-method> <!-- precondition -->
-        <test-method status="FAIL" signature="editbilladress()[pri:1, instance:Script.AddAdress@9660f4e]" name="editbilladress" duration-ms="12370" started-at="2019-11-11T18:10:51 IST" finished-at="2019-11-11T18:11:04 IST">
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at feature.taskfeature.EditBillingAddress(taskfeature.java:150)
-at Script.AddAdress.editbilladress(AddAdress.java:15)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(Unknown Source)
-at org.testng.TestRunner.privateRun(TestRunner.java:770)
-at org.testng.TestRunner.run(TestRunner.java:591)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:41)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:443)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:67)
-at java.util.concurrent.FutureTask.run(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-at java.lang.Thread.run(Unknown Source)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        <test-method status="PASS" signature="purchaseProduct()[pri:1, instance:Script.UserProductPurchase@9660f4e]" name="purchaseProduct" duration-ms="23428" started-at="2019-11-12T16:14:41 IST" finished-at="2019-11-12T16:15:05 IST">
           <reporter-output>
             <line>
-              <![CDATA[editbilladress script execustion startsMon Nov 11 18:10:51 IST 2019]]>
+              <![CDATA[purchaseProduct script execustion startsTue Nov 12 16:14:41 IST 2019]]>
             </line>
             <line>
               <![CDATA[My Account]]>
             </line>
             <line>
-              <![CDATA[editbilladress script is failed]]>
+              <![CDATA[purchaseProduct script is passed]]>
             </line>
           </reporter-output>
-        </test-method> <!-- editbilladress -->
-      </class> <!-- Script.AddAdress -->
+        </test-method> <!-- purchaseProduct -->
+        <test-method status="PASS" signature="precondition(java.lang.String, java.lang.String)[pri:0, instance:Script.UserProductPurchase@9660f4e]" name="precondition" is-config="true" duration-ms="14111" started-at="2019-11-12T16:15:05 IST" finished-at="2019-11-12T16:15:19 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.store.elsevierhealth.com/asia/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[chrome Launched]]>
+            </line>
+            <line>
+              <![CDATA[https://www.store.elsevierhealth.com/asia/ url is navigated]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- precondition -->
+        <test-method status="PASS" signature="GuestUserProductPurchase()[pri:2, instance:Script.UserProductPurchase@9660f4e]" name="GuestUserProductPurchase" duration-ms="22806" started-at="2019-11-12T16:15:19 IST" finished-at="2019-11-12T16:15:41 IST">
+          <reporter-output>
+            <line>
+              <![CDATA[GuestUserProductPurchase script execustion startsTue Nov 12 16:15:19 IST 2019]]>
+            </line>
+            <line>
+              <![CDATA[GuestUserProductPurchase script is passed]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- GuestUserProductPurchase -->
+      </class> <!-- Script.UserProductPurchase -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

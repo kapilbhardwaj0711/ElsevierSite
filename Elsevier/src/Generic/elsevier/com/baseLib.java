@@ -21,7 +21,8 @@ public class baseLib
     	driver.navigate().to(url);
     	Reporter.log(url+" url is navigated",true);
     }
-/*   @AfterMethod
+ 
+/*    @AfterMethod
     public void postcondition()
     {
     	driver.close();
@@ -30,6 +31,6 @@ public class baseLib
 		  driver.quit();	
 		}
     	Reporter.log("browser closed",true);
-    }
+  }
   */
 }
