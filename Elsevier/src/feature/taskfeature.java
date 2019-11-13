@@ -22,7 +22,9 @@ import Page.object.BasePage;
 import Page.object.CreateNewCustomerAccountPage;
 import Page.object.EditAddressPage;
 import Page.object.GuestUserCheckOutPage;
+import Page.object.HomePage;
 import Page.object.LoginPage;
+import Page.object.MedicinePage;
 import Page.object.MyAccountPage;
 import okhttp3.Address;
 
@@ -38,6 +40,8 @@ public class taskfeature
    AddressBookPage abp;
    AddNewAddressPage anap;
    GuestUserCheckOutPage gucp;
+   HomePage hp;
+   MedicinePage mp;
    public taskfeature(WebDriver driver)
    {
 	   this.driver=driver;
@@ -48,6 +52,8 @@ public class taskfeature
 	   eap= new EditAddressPage(driver);
 	   anap = new AddNewAddressPage(driver);
 	   gucp= new GuestUserCheckOutPage(driver);
+	   hp= new HomePage(driver);
+	   mp= new MedicinePage(driver);
    }
    
    public void ValidLogin(String username , String password) throws Exception
@@ -272,9 +278,29 @@ public class taskfeature
 	   eap.getSubmit().click();
 	   Thread.sleep(3000);
 	   Assert.assertEquals("You saved the address.", driver.findElement(By.xpath("//div[@data-bind='html: message.text']")).getText());
-	   
-
    }
+   
+   public void checkFilter() throws InterruptedException
+   {
+	   hp.getMedicineBtn().click();
+	   
+	   JavascriptExecutor jre = (JavascriptExecutor)driver;
+	   jre.executeScript("window.scrollBy(0,1000)");
+	   
+	   bp.getPriceFilterBtn().click();
+	   Thread.sleep(2000);
+	   bp.getPriceFilterValue().click();
+	   Thread.sleep(5000);
+	   mp.getPlasticSugeryBook().click();
+	   Thread.sleep(1000);
+	   bp.getAddToCartbtn().click();
+	   Thread.sleep(5000);
+	   bp.getMycartIcon().click();
+	   Thread.sleep(3000);
+	   bp.getViewCartBtn().click();
+	   Assert.assertEquals(driver.getTitle(), "Shopping Cart");
+	   
+	}
 }
    
 
