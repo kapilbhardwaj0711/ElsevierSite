@@ -9,12 +9,12 @@
     <parameter name="baseurl" value="https://www.store.elsevierhealth.com/asia/"/>
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="Script.CheckFilter">
+      <class name="Script.UserProductPurchase">
         <methods>
-          <include name="FilterCheck"/>
           <include name="precondition"/>
+          <include name="EBookPurchaseUser"/>
         </methods>
-      </class> <!-- Script.CheckFilter -->
+      </class> <!-- Script.UserProductPurchase -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

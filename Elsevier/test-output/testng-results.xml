@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
   <reporter-output>
     <line>
-      <![CDATA[suite is executed Wed Nov 13 17:45:42 IST 2019]]>
+      <![CDATA[suite is executed Tue Nov 19 10:56:05 IST 2019]]>
     </line>
     <line>
       <![CDATA[chrome Launched]]>
@@ -11,18 +11,21 @@
       <![CDATA[https://www.store.elsevierhealth.com/asia/ url is navigated]]>
     </line>
     <line>
-      <![CDATA[FilterCheck script execustion startsWed Nov 13 17:46:20 IST 2019]]>
+      <![CDATA[EBookPurchaseUser script execustion startsTue Nov 19 10:57:24 IST 2019]]>
     </line>
     <line>
-      <![CDATA[FilterCheck script is passed]]>
+      <![CDATA[My Account]]>
+    </line>
+    <line>
+      <![CDATA[EBookPurchaseUser script is passed]]>
     </line>
   </reporter-output>
-  <suite name="Suite" duration-ms="67148" started-at="2019-11-13T17:45:42 IST" finished-at="2019-11-13T17:46:49 IST">
+  <suite name="Suite" duration-ms="138580" started-at="2019-11-19T10:56:05 IST" finished-at="2019-11-19T10:58:24 IST">
     <groups>
     </groups>
-    <test name="Test" duration-ms="67148" started-at="2019-11-13T17:45:42 IST" finished-at="2019-11-13T17:46:49 IST">
-      <class name="Script.CheckFilter">
-        <test-method status="PASS" signature="precondition(java.lang.String, java.lang.String)[pri:0, instance:Script.CheckFilter@9660f4e]" name="precondition" is-config="true" duration-ms="37889" started-at="2019-11-13T17:45:42 IST" finished-at="2019-11-13T17:46:20 IST">
+    <test name="Test" duration-ms="138580" started-at="2019-11-19T10:56:05 IST" finished-at="2019-11-19T10:58:24 IST">
+      <class name="Script.UserProductPurchase">
+        <test-method status="PASS" signature="precondition(java.lang.String, java.lang.String)[pri:0, instance:Script.UserProductPurchase@9660f4e]" name="precondition" is-config="true" duration-ms="78571" started-at="2019-11-19T10:56:05 IST" finished-at="2019-11-19T10:57:24 IST">
           <params>
             <param index="0">
               <value>
@@ -44,17 +47,20 @@
             </line>
           </reporter-output>
         </test-method> <!-- precondition -->
-        <test-method status="PASS" signature="FilterCheck()[pri:0, instance:Script.CheckFilter@9660f4e]" name="FilterCheck" duration-ms="29220" started-at="2019-11-13T17:46:20 IST" finished-at="2019-11-13T17:46:49 IST">
+        <test-method status="PASS" signature="EBookPurchaseUser()[pri:3, instance:Script.UserProductPurchase@9660f4e]" name="EBookPurchaseUser" duration-ms="59975" started-at="2019-11-19T10:57:24 IST" finished-at="2019-11-19T10:58:24 IST">
           <reporter-output>
             <line>
-              <![CDATA[FilterCheck script execustion startsWed Nov 13 17:46:20 IST 2019]]>
+              <![CDATA[EBookPurchaseUser script execustion startsTue Nov 19 10:57:24 IST 2019]]>
             </line>
             <line>
-              <![CDATA[FilterCheck script is passed]]>
+              <![CDATA[My Account]]>
+            </line>
+            <line>
+              <![CDATA[EBookPurchaseUser script is passed]]>
             </line>
           </reporter-output>
-        </test-method> <!-- FilterCheck -->
-      </class> <!-- Script.CheckFilter -->
+        </test-method> <!-- EBookPurchaseUser -->
+      </class> <!-- Script.UserProductPurchase -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

@@ -26,6 +26,7 @@ import Page.object.HomePage;
 import Page.object.LoginPage;
 import Page.object.MedicinePage;
 import Page.object.MyAccountPage;
+import Page.object.SearchResultPage;
 import okhttp3.Address;
 
 
@@ -42,6 +43,8 @@ public class taskfeature
    GuestUserCheckOutPage gucp;
    HomePage hp;
    MedicinePage mp;
+   Utility tm;
+   SearchResultPage srp;
    public taskfeature(WebDriver driver)
    {
 	   this.driver=driver;
@@ -54,6 +57,8 @@ public class taskfeature
 	   gucp= new GuestUserCheckOutPage(driver);
 	   hp= new HomePage(driver);
 	   mp= new MedicinePage(driver);
+	   tm = new Utility(driver);
+	   srp=new SearchResultPage(driver);
    }
    
    public void ValidLogin(String username , String password) throws Exception
@@ -124,36 +129,60 @@ public class taskfeature
    public void ExistingUserproductPurchase(String username,String password,String product) throws Exception
    {
 	   ValidLogin(username, password);
-	   bp.getSearchBar().sendKeys(product,Keys.ENTER);
-	   Thread.sleep(2000);
-	   List<WebElement> links = driver.findElements(By.xpath("//a"));
-	   
-	   Iterator<WebElement> itr = links.iterator();
-	   while(itr.hasNext())
-	   {
-		   WebElement txt = itr.next();
-		   if (product.equalsIgnoreCase(txt.getText())) 
-		   {
-			   txt.click();
-			   break;
-		   }
-	   }
+	   tm.serachFuc(product);
+	   srp.getFirstProductOnSearch().click();
+	   Assert.assertEquals(bp.getProductTitle().getText(), product);
 	   bp.getAddToCartbtn().click();
 	   bp.getMycartIcon().click();
 	   bp.getViewCartBtn().click();
-	   Thread.sleep(2000);
-	   bp.getProceedTochckBtn().click();
-	   String title = "Checkout";
-	   Assert.assertEquals(driver.getTitle(), title);
 	   
-
-	 }
+}
+   public void EbookPurchaseVAlidUser(String username ,String password,String product) throws Exception 
+   {
+	   ValidLogin(username, password);
+	   tm.serachFuc(product);
+	   List<WebElement> numberofbooks = driver.findElements(By.xpath("//span[text()='Add to Cart']"));
+		  
+	   for (int i = 0; i < 5; i++) 
+	   {
+		   WebElement book = numberofbooks.get(i);
+		   book.click();
+	   }
+	   Thread.sleep(10000);
+	   JavascriptExecutor jre = (JavascriptExecutor)driver;
+	   jre.executeScript("window.scrollBy(0,-300)");
+	   WebDriverWait wait = new WebDriverWait(driver, 30);
+	   wait.until(ExpectedConditions.visibilityOf(bp.getCartvalue5()));
+	   
+	   bp.getLogo().click();
+	   hp.getEbooksbtn().click();
+	   
+	   List<WebElement> Ebooks = driver.findElements(By.xpath("//span[text()='Add to Cart']"));
+		for (int i = 0; i < 5; i++) 
+	   {
+		   WebElement Ebook1 = Ebooks.get(i);
+		   Ebook1.click();
+		   
+		}
+	   jre.executeScript("window.scrollBy(0,-300)");
+	  wait.until(ExpectedConditions.visibilityOf(bp.getCartvalue10()));
+	   
+	   bp.getMycartIcon().click();
+	   bp.getViewCartBtn().click();
+	   Thread.sleep(2000);
+	  
+//	   bp.getProceedTochckBtn().click();
+//	   String title = "Checkout";
+//	   Assert.assertEquals(driver.getTitle(),title);
+	   
+   }
    
    public void GuestUserProductPurchase(String username,String password,String product,
 		   String Guestemail,String firstname,String lastname,String street,String company,String city,
 		   	String state,String zip,String country,String telephone)throws Exception
    {
-	   bp.getSearchBar().sendKeys(product,Keys.ENTER);
+	   tm.serachFuc(product);
+  /*   bp.getSearchBar().sendKeys(product,Keys.ENTER);
 	   Thread.sleep(2000);
 	   List<WebElement> links = driver.findElements(By.xpath("//a"));
 	   
@@ -161,19 +190,24 @@ public class taskfeature
 	   while(itr.hasNext())
 	   {
 		   WebElement txt = itr.next();
-		   if (product.equalsIgnoreCase(txt.getText())) 
+		   String value ="Robbins & Cotran Pathologic ...";
+		   System.out.println("string value:- "+txt.getText());
+		   if (txt.getText().contains(value)) 
 		   {
 			   txt.click();
 			   break;
 		   }
-	   }
+		}
+	*/	
+	   srp.getFirstProductOnSearch().click();
+	   Assert.assertEquals(bp.getProductIsbn().getText(), product);
 	   bp.getAddToCartbtn().click();
 	   bp.getMycartIcon().click();
 	   bp.getViewCartBtn().click();
 	   Thread.sleep(2000);
-	   bp.getProceedTochckBtn().click();
+//	   bp.getProceedTochckBtn().click();
 	   Thread.sleep(2000);
-	   gucp.getGemail().sendKeys(Guestemail);
+/*	   gucp.getGemail().sendKeys(Guestemail);
 	   Thread.sleep(1000);
 	   gucp.getGFname().sendKeys(firstname);
 	   gucp.getGLname().sendKeys(lastname);
@@ -196,13 +230,12 @@ public class taskfeature
 	   
 	   String expected="Checkout";
 	   Assert.assertEquals(driver.getTitle(), expected);
-	   
+*/	   
    }
    
-
+public void EditBillingAddress(String username, String password,String street,String city,String state,String zip,String country) throws Exception
    
-   public void EditBillingAddress(String username, String password,String street,String city,String state,String zip,String country) throws Exception
-   {
+{
 	 ValidLogin(username, password); 
 	 mac.getMangeAcBtn().click();
 	 Thread.sleep(1000);
@@ -301,6 +334,7 @@ public class taskfeature
 	   Assert.assertEquals(driver.getTitle(), "Shopping Cart");
 	   
 	}
+   
 }
    
 

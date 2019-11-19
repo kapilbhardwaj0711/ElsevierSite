@@ -17,7 +17,7 @@ public interface Data
 	final String orgname="compunnel";
 	final String dateNbirth="17/11/1990";
 	final String telephone ="9821456875";
-	final String product ="Robbins Basic Pathology";
+	final String product ="Robbins and Cotran Review of Pathology";
 	final String street="noidastudio";
 	final String city="Chandigarh";;
 	final String state="Chandigarh";
@@ -25,4 +25,5 @@ public interface Data
 	final String country="India";
 	final String company="jobkart";
 	final String Guestemail="test107@gmail.com";
+	final String isbn="9780323636360";
 }

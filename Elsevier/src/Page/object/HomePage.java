@@ -15,6 +15,9 @@ public class HomePage
   @FindBy(linkText = "Infectious Disease")
   private @Getter WebElement infectionDiseaseBtn;
   
+  @FindBy(linkText = "e-Books")
+  private @Getter WebElement ebooksbtn;
+  
   public HomePage(WebDriver driver)
   {
 	  PageFactory.initElements(driver, this);
