@@ -37,6 +37,9 @@ public class BasePage
 	@FindBy(xpath = "//a[@class='logo']")
 	private @Getter WebElement logo;
 	
+	@FindBy(xpath = "//span[@class='counter-number']")
+	private @Getter WebElement Cartvalue;
+	
 	@FindBy(xpath = "//span[text()='10']")
 	private @Getter WebElement Cartvalue10;
 	

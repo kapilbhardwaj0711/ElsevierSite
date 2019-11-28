@@ -140,6 +140,18 @@ public class taskfeature
    public void EbookPurchaseVAlidUser(String username ,String password,String product) throws Exception 
    {
 	   ValidLogin(username, password);
+	   
+	   	String val = bp.getCartvalue().getText();
+	    int value = Integer.parseInt(val);
+	   if (value> 0) 
+	   {   
+		   bp.getMycartIcon().click();
+		   
+		   bp.getViewCartBtn().click();
+		   Thread.sleep(3000);
+		   tm.clearCart();
+	   }
+	   
 	   tm.serachFuc(product);
 	   List<WebElement> numberofbooks = driver.findElements(By.xpath("//span[text()='Add to Cart']"));
 		  
