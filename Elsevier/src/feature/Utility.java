@@ -20,7 +20,7 @@ public class Utility
     	this.driver=driver;
     	bp = new BasePage(driver);
     }
-    public void serachFuc(String product)
+    public void searchFuc(String product)
     {
     	bp.getSearchBar().sendKeys(product,Keys.ENTER);
     	List<WebElement> links = driver.findElements(By.xpath("//a"));

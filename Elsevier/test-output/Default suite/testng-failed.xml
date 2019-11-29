@@ -5,10 +5,8 @@
     <classes>
       <class name="Script.UserProductPurchase">
         <methods>
-          <include name="GuestUserProductPurchase"/>
           <include name="precondition"/>
-          <include name="validUserProductPurchase"/>
-          <include name="EBookPurchaseUser"/>
+          <include name="ApplyDiscountCoupon"/>
         </methods>
       </class> <!-- Script.UserProductPurchase -->
     </classes>

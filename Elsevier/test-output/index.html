@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Suite">
-                    <span>C:\Users\30346.vendor\git\ElsevierSite\Elsevier\CheckFilter.xml</span>
+                    <span>C:\Users\30346.vendor\git\ElsevierSite\Elsevier\UserProductPurchase.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -102,7 +102,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="Script.CheckFilter" hash-for-method="FilterCheck">FilterCheck</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="Script.UserProductPurchase" hash-for-method="ApplyDiscountCoupon">ApplyDiscountCoupon</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -120,14 +120,14 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">Script.CheckFilter</span>
+              <span class="class-name">Script.UserProductPurchase</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="FilterCheck">
-                  </a> <!-- FilterCheck -->
-                  <span class="method-name">FilterCheck</span>
+                  <a name="ApplyDiscountCoupon">
+                  </a> <!-- ApplyDiscountCoupon -->
+                  <span class="method-name">ApplyDiscountCoupon</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -135,7 +135,7 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\30346.vendor\git\ElsevierSite\Elsevier\CheckFilter.xml</span>
+            <span class="header-content">C:\Users\30346.vendor\git\ElsevierSite\Elsevier\UserProductPurchase.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -150,7 +150,7 @@
     &lt;parameter name=&quot;baseurl&quot; value=&quot;https://www.store.elsevierhealth.com/asia/&quot;/&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;Script.CheckFilter&quot;/&gt;
+      &lt;class name=&quot;Script.UserProductPurchase&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -192,14 +192,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'FilterCheck')
-data.setCell(0, 2, 'Script.CheckFilter')
-data.setCell(0, 3, 23964);
+data.setCell(0, 1, 'ApplyDiscountCoupon')
+data.setCell(0, 2, 'Script.UserProductPurchase')
+data.setCell(0, 3, 29184);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 38 seconds</span>
+              <span class="suite-total-time">Total running time: 43 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -211,19 +211,33 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="reporter-method-div">
-              <span class="reporter-method-name">FilterCheck</span>
+              <span class="reporter-method-name">ApplyDiscountCoupon</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">FilterCheck script execustion startsWed Nov 27 18:23:18 IST 2019</span>
-                <span class="reporter-method-output">FilterCheck script is passed</span>
+                <span class="reporter-method-output">ApplyDiscountCoupon script execustion startsFri Nov 29 17:27:49 IST 2019</span>
+                <span class="reporter-method-output">My Account</span>
+                <span class="reporter-method-output">ApplyDiscountCoupon script is passed</span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">4 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">Script.UserProductPurchase</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">GuestUserProductPurchase</span>
+                <br/>
+                <span class="ignored-method-name">validUserProductPurchase</span>
+                <br/>
+                <span class="ignored-method-name">EBookPurchaseUser</span>
+                <br/>
+                <span class="ignored-method-name">AddtoCart</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Suite" class="panel">
@@ -232,14 +246,14 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">Script.CheckFilter</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">Script.UserProductPurchase</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">precondition(chrome, https://www.store.elsevierhealth.com/asia/)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">FilterCheck</span>
-                <span class="method-start">14471 ms</span>
+                <span class="method-name">ApplyDiscountCoupon</span>
+                <span class="method-start">14370 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -57,6 +57,7 @@ public class BasePage
 	
 	@FindBy(xpath = "//div[@class='page-title-wrapper']//span[@class='base']")
 	private @Getter WebElement productTitle;	
+	
 	public BasePage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);

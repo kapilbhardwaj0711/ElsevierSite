@@ -129,7 +129,7 @@ public class taskfeature
    public void ExistingUserproductPurchase(String username,String password,String product) throws Exception
    {
 	   ValidLogin(username, password);
-	   tm.serachFuc(product);
+	   tm.searchFuc(product);
 	   srp.getFirstProductOnSearch().click();
 	   Assert.assertEquals(bp.getProductTitle().getText(), product);
 	   bp.getAddToCartbtn().click();
@@ -142,17 +142,21 @@ public class taskfeature
 	   ValidLogin(username, password);
 	   
 	   	String val = bp.getCartvalue().getText();
-	    int value = Integer.parseInt(val);
-	   if (value> 0) 
+//	    int value = Integer.parseInt(val);
+	   	if (val.equalsIgnoreCase("")) 
 	   {   
-		   bp.getMycartIcon().click();
-		   
-		   bp.getViewCartBtn().click();
-		   Thread.sleep(3000);
-		   tm.clearCart();
+	   		System.out.println("Cart is empty");
 	   }
+	   	else 
+	   	{
+	   		System.out.println("i am in else ");
+			   bp.getMycartIcon().click();
+			   bp.getViewCartBtn().click();
+			   Thread.sleep(3000);
+			   tm.clearCart();
+		}
 	   
-	   tm.serachFuc(product);
+	   tm.searchFuc(product);
 	   List<WebElement> numberofbooks = driver.findElements(By.xpath("//span[text()='Add to Cart']"));
 		  
 	   for (int i = 0; i < 5; i++) 
@@ -177,7 +181,7 @@ public class taskfeature
 		   
 		}
 	   jre.executeScript("window.scrollBy(0,-300)");
-	  wait.until(ExpectedConditions.visibilityOf(bp.getCartvalue10()));
+	   wait.until(ExpectedConditions.visibilityOf(bp.getCartvalue10()));
 	   
 	   bp.getMycartIcon().click();
 	   bp.getViewCartBtn().click();
@@ -193,7 +197,7 @@ public class taskfeature
 		   String Guestemail,String firstname,String lastname,String street,String company,String city,
 		   	String state,String zip,String country,String telephone)throws Exception
    {
-	   tm.serachFuc(product);
+	   tm.searchFuc(product);
   /*   bp.getSearchBar().sendKeys(product,Keys.ENTER);
 	   Thread.sleep(2000);
 	   List<WebElement> links = driver.findElements(By.xpath("//a"));
@@ -346,6 +350,56 @@ public void EditBillingAddress(String username, String password,String street,St
 	   Assert.assertEquals(driver.getTitle(), "Shopping Cart");
 	   
 	}
+   public void DiscountCoupon(String username,String password,String product) throws Exception
+   {
+	   System.out.println(product);
+	   ValidLogin(username, password);
+//	   String val1=driver.findElement(By.xpath("//span[@class='counter qty empty']/span[@class='counter-number']")).getText();
+	    
+//	   System.out.println("cart value is :-"+val1);
+	   String val = bp.getCartvalue().getText();
+	   System.out.println("cart value "+val);
+	  
+//	   int value = Integer.parseInt(val);
+	   if (val.equalsIgnoreCase("")) 
+	   {
+		   
+		   System.out.println("Cart is empty ");
+	   }
+	   else 
+	   {
+		   System.out.println(" i am in else condition");
+		   bp.getMycartIcon().click();
+		   bp.getViewCartBtn().click();
+		   Thread.sleep(3000);
+		   tm.clearCart();
+		}
+	   Thread.sleep(3000);
+	   tm.searchFuc(product);
+	   Thread.sleep(3000);
+	   
+	   driver.findElement(By.xpath("//span[text()='Add to Cart']")).click();
+	   bp.getMycartIcon().click();
+	   bp.getViewCartBtn().click();
+	   
+	   System.out.println("Step 10");
+	  
+      String oldprice = driver.findElement(By.id("old-price")).getText();
+     
+      String basefare = oldprice.substring(1);
+      double basefare1 = Double.parseDouble(basefare);
+      System.out.println(basefare1);
+      
+      
+      String value = driver.findElement(By.xpath("//div[@class='field qty']//input")).getAttribute("value");
+	  System.out.println(value);
+	  double qty = Double.parseDouble(value);
+	  double finlprice = qty*basefare1;
+	  
+	  double val2 = finlprice/4;
+      System.out.println("dicounted price "+val2);
+	   
+   }
    
 }
    
