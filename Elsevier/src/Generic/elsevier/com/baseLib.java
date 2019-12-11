@@ -22,7 +22,7 @@ public class baseLib
     	Reporter.log(url+" url is navigated",true);
     }
  
-/*    @AfterMethod
+    @AfterMethod
     public void postcondition()
     {
     	driver.close();
@@ -32,5 +32,5 @@ public class baseLib
 		}
     	Reporter.log("browser closed",true);
   }
-  */
+  
 }

@@ -1,4 +1,5 @@
 package feature;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -140,8 +141,9 @@ public class taskfeature
    public void EbookPurchaseVAlidUser(String username ,String password,String product) throws Exception 
    {
 	   ValidLogin(username, password);
-	   
-	   	String val = bp.getCartvalue().getText();
+	   Thread.sleep(5000);
+	   bp.ClearCart();
+/*	   	String val = bp.getCartvalue().getText();
 //	    int value = Integer.parseInt(val);
 	   	if (val.equalsIgnoreCase("")) 
 	   {   
@@ -155,7 +157,7 @@ public class taskfeature
 			   Thread.sleep(3000);
 			   tm.clearCart();
 		}
-	   
+*/   	Thread.sleep(5000);
 	   tm.searchFuc(product);
 	   List<WebElement> numberofbooks = driver.findElements(By.xpath("//span[text()='Add to Cart']"));
 		  
@@ -352,12 +354,14 @@ public void EditBillingAddress(String username, String password,String street,St
 	}
    public void DiscountCoupon(String username,String password,String product) throws Exception
    {
-	   System.out.println(product);
+//	   System.out.println(product);
 	   ValidLogin(username, password);
+	   Thread.sleep(5000);
+	   bp.ClearCart();
 //	   String val1=driver.findElement(By.xpath("//span[@class='counter qty empty']/span[@class='counter-number']")).getText();
 	    
 //	   System.out.println("cart value is :-"+val1);
-	   String val = bp.getCartvalue().getText();
+/*	   String val = bp.getCartvalue().getText();
 	   System.out.println("cart value "+val);
 	  
 //	   int value = Integer.parseInt(val);
@@ -368,12 +372,13 @@ public void EditBillingAddress(String username, String password,String street,St
 	   }
 	   else 
 	   {
-		   System.out.println(" i am in else condition");
+//		   System.out.println(" i am in else condition");
 		   bp.getMycartIcon().click();
 		   bp.getViewCartBtn().click();
 		   Thread.sleep(3000);
 		   tm.clearCart();
 		}
+	*/
 	   Thread.sleep(3000);
 	   tm.searchFuc(product);
 	   Thread.sleep(3000);
@@ -382,23 +387,41 @@ public void EditBillingAddress(String username, String password,String street,St
 	   bp.getMycartIcon().click();
 	   bp.getViewCartBtn().click();
 	   
-	   System.out.println("Step 10");
+//	  System.out.println("Step 10");
 	  
       String oldprice = driver.findElement(By.id("old-price")).getText();
-     
       String basefare = oldprice.substring(1);
       double basefare1 = Double.parseDouble(basefare);
-      System.out.println(basefare1);
+//      System.out.println(basefare1);
       
       
       String value = driver.findElement(By.xpath("//div[@class='field qty']//input")).getAttribute("value");
-	  System.out.println(value);
+//	  System.out.println(value);
 	  double qty = Double.parseDouble(value);
 	  double finlprice = qty*basefare1;
 	  
 	  double val2 = finlprice/4;
-      System.out.println("dicounted price "+val2);
-	   
+ //   System.out.println("dicounted price "+val2);
+      
+      double afterdiscount = basefare1-val2;
+ //     System.out.println(afterdiscount);
+      
+      DecimalFormat df2 = new DecimalFormat("$#.##");
+//      System.out.println("Two decimal :- "+df2.format(afterdiscount)); 
+      String discountedvalue = df2.format(afterdiscount);
+      
+      driver.findElement(By.id("coupon_code")).sendKeys("gcs25");
+      driver.findElement(By.xpath("//button//span[text()='Apply Discount']")).click();
+      
+      
+    List<WebElement> numberOfSubtotal = driver.findElements(By.xpath("//td[@class='col subtotal']"));
+    Iterator<WebElement> itr = numberOfSubtotal.iterator();
+      
+    String subtotalval = itr.next().getText();
+//    System.out.println("subtotal value "+subtotalval);
+    Assert.assertEquals(discountedvalue, subtotalval);
+    
+   
    }
    
 }

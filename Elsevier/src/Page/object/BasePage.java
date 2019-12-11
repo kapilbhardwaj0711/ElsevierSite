@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import com.sun.xml.bind.v2.schemagen.xmlschema.List;
 
@@ -61,6 +62,28 @@ public class BasePage
 	public BasePage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
+	}
+	
+	public void ClearCart() throws InterruptedException
+	{
+		  String val = getCartvalue().getText();
+		   System.out.println("cart value "+val);
+		  
+//		   int value = Integer.parseInt(val);
+		   if (val.equalsIgnoreCase("")) 
+		   {
+			   
+			   System.out.println("Cart is empty ");
+		   }
+		   else 
+		   {
+//			   System.out.println(" i am in else condition");
+			   getMycartIcon().click();
+			   getViewCartBtn().click();
+			   Thread.sleep(3000);
+			   clearcartBtn.click();
+			   Assert.assertEquals(getEmpyCartSuccessmsg().getText(), "You have no items in your shopping cart.");
+			}
 	}
 	
 	

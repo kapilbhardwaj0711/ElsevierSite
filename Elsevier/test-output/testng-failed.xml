@@ -12,7 +12,7 @@
       <class name="Script.UserProductPurchase">
         <methods>
           <include name="precondition"/>
-          <include name="EBookPurchaseUser"/>
+          <include name="ApplyDiscountCoupon"/>
         </methods>
       </class> <!-- Script.UserProductPurchase -->
     </classes>

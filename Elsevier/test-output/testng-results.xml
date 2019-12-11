@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="4" total="5" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
     <line>
-      <![CDATA[suite is executed Fri Nov 29 17:27:35 IST 2019]]>
+      <![CDATA[suite is executed Wed Dec 11 17:30:34 IST 2019]]>
     </line>
     <line>
       <![CDATA[chrome Launched]]>
@@ -11,7 +11,7 @@
       <![CDATA[https://www.store.elsevierhealth.com/asia/ url is navigated]]>
     </line>
     <line>
-      <![CDATA[ApplyDiscountCoupon script execustion startsFri Nov 29 17:27:49 IST 2019]]>
+      <![CDATA[ApplyDiscountCoupon script execustion startsWed Dec 11 17:30:47 IST 2019]]>
     </line>
     <line>
       <![CDATA[My Account]]>
@@ -19,13 +19,16 @@
     <line>
       <![CDATA[ApplyDiscountCoupon script is passed]]>
     </line>
+    <line>
+      <![CDATA[browser closed]]>
+    </line>
   </reporter-output>
-  <suite name="Suite" duration-ms="43589" started-at="2019-11-29T17:27:35 IST" finished-at="2019-11-29T17:28:19 IST">
+  <suite name="Suite" duration-ms="58184" started-at="2019-12-11T17:30:34 IST" finished-at="2019-12-11T17:31:32 IST">
     <groups>
     </groups>
-    <test name="Test" duration-ms="43589" started-at="2019-11-29T17:27:35 IST" finished-at="2019-11-29T17:28:19 IST">
+    <test name="Test" duration-ms="58184" started-at="2019-12-11T17:30:34 IST" finished-at="2019-12-11T17:31:32 IST">
       <class name="Script.UserProductPurchase">
-        <test-method status="PASS" signature="precondition(java.lang.String, java.lang.String)[pri:0, instance:Script.UserProductPurchase@9660f4e]" name="precondition" is-config="true" duration-ms="14369" started-at="2019-11-29T17:27:35 IST" finished-at="2019-11-29T17:27:49 IST">
+        <test-method status="PASS" signature="precondition(java.lang.String, java.lang.String)[pri:0, instance:Script.UserProductPurchase@5a8806ef]" name="precondition" is-config="true" duration-ms="12837" started-at="2019-12-11T17:30:34 IST" finished-at="2019-12-11T17:30:47 IST">
           <params>
             <param index="0">
               <value>
@@ -47,10 +50,10 @@
             </line>
           </reporter-output>
         </test-method> <!-- precondition -->
-        <test-method status="PASS" signature="ApplyDiscountCoupon()[pri:5, instance:Script.UserProductPurchase@9660f4e]" name="ApplyDiscountCoupon" duration-ms="29184" started-at="2019-11-29T17:27:49 IST" finished-at="2019-11-29T17:28:19 IST">
+        <test-method status="PASS" signature="ApplyDiscountCoupon()[pri:5, instance:Script.UserProductPurchase@5a8806ef]" name="ApplyDiscountCoupon" duration-ms="40624" started-at="2019-12-11T17:30:47 IST" finished-at="2019-12-11T17:31:28 IST">
           <reporter-output>
             <line>
-              <![CDATA[ApplyDiscountCoupon script execustion startsFri Nov 29 17:27:49 IST 2019]]>
+              <![CDATA[ApplyDiscountCoupon script execustion startsWed Dec 11 17:30:47 IST 2019]]>
             </line>
             <line>
               <![CDATA[My Account]]>
@@ -60,6 +63,13 @@
             </line>
           </reporter-output>
         </test-method> <!-- ApplyDiscountCoupon -->
+        <test-method status="PASS" signature="postcondition()[pri:0, instance:Script.UserProductPurchase@5a8806ef]" name="postcondition" is-config="true" duration-ms="4678" started-at="2019-12-11T17:31:28 IST" finished-at="2019-12-11T17:31:32 IST">
+          <reporter-output>
+            <line>
+              <![CDATA[browser closed]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- postcondition -->
       </class> <!-- Script.UserProductPurchase -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
