@@ -9,7 +9,8 @@
   <parameter name ="browser" value="chrome"/>
   <parameter name ="baseurl" value="https://www.store.elsevierhealth.com/asia/"/>
    <classes>
-      <class name="Script.UserProductPurchase"/>
+   	  <class name="Script.UserProductPurchase"/>
+     
     </classes>
   </test> 
 </suite> 

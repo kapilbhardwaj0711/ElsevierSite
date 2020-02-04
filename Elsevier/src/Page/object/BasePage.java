@@ -68,12 +68,12 @@ public class BasePage
 	{
 		  String val = getCartvalue().getText();
 		   System.out.println("cart value "+val);
+		   
 		  
 //		   int value = Integer.parseInt(val);
 		   if (val.equalsIgnoreCase("")) 
 		   {
-			   
-			   System.out.println("Cart is empty ");
+			 System.out.println("Cart is empty ");
 		   }
 		   else 
 		   {

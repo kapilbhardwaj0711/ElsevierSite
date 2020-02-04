@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="3" guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [Suite]]" parallel="tests">
+  <listeners>
+    <listener class-name="Generic.elsevier.com.MyTestNGListner"/>
+    <listener class-name="Generic.elsevier.com.extant"/>
+  </listeners>
+  <test thread-count="3" name="Test(failed)(failed)" parallel="tests">
+    <parameter name="baseurl" value="https://www.store.elsevierhealth.com/asia/"/>
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="Script.UserProductPurchase">
+        <methods>
+          <include name="precondition"/>
+          <include name="postcondition"/>
+          <include name="EBookPurchaseUser"/>
+        </methods>
+      </class> <!-- Script.UserProductPurchase -->
+    </classes>
+  </test> <!-- Test(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [Suite]] -->

@@ -20,7 +20,9 @@ public class LoginPage
 	    private @Getter WebElement loginbtn;
 	    @FindBy(linkText="Create an Account")
 	    private @Getter WebElement CreateAc;
-	  
+	    
+	    @FindBy(xpath = "//a/span[text()='Forgot Your Password?'][1]")
+	    private @Getter WebElement ForgetPassbtn;
 	   
 	   public LoginPage(WebDriver driver)
 	   {

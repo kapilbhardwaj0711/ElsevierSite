@@ -3,6 +3,23 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="Jar/selenium-server-standalone-3.141.59.jar"/>
+	<classpathentry kind="lib" path="Jar/bsh-2.0b4.jar"/>
+	<classpathentry kind="lib" path="Jar/bson-3.3.0.jar"/>
+	<classpathentry kind="lib" path="Jar/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="Jar/extentreports-2.41.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="Jar/extentreports-2.41.2-sources.jar"/>
+	<classpathentry kind="lib" path="Jar/extentreports-2.41.2.jar"/>
+	<classpathentry kind="lib" path="Jar/freemarker-2.3.23.jar"/>
+	<classpathentry kind="lib" path="Jar/gson-2.8.5.jar"/>
+	<classpathentry kind="lib" path="Jar/httpclient-4.5.2.jar"/>
+	<classpathentry kind="lib" path="Jar/httpcore-4.4.4.jar"/>
+	<classpathentry kind="lib" path="Jar/httpmime-4.5.2.jar"/>
+	<classpathentry kind="lib" path="Jar/jcommander-1.48.jar"/>
+	<classpathentry kind="lib" path="Jar/jsoup-1.9.2.jar"/>
+	<classpathentry kind="lib" path="Jar/mongodb-driver-3.3.0.jar"/>
+	<classpathentry kind="lib" path="Jar/mongodb-driver-core-3.3.0.jar"/>
+	<classpathentry kind="lib" path="Jar/poi-3.17-javadoc.jar"/>
+	<classpathentry kind="lib" path="Jar/testng-6.9.10.jar"/>
 	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry kind="lib" path="Jar/poi-3.17-sources.jar"/>
 	<classpathentry kind="lib" path="Jar/poi-3.17.jar"/>
@@ -24,23 +41,5 @@
 	<classpathentry kind="lib" path="Jar/poi-ooxml-schemas-4.1.0.jar"/>
 	<classpathentry kind="lib" path="Jar/poi-scratchpad-4.1.0.jar"/>
 	<classpathentry kind="lib" path="Jar/xmlbeans-3.1.0.jar"/>
-	<classpathentry kind="lib" path="ExeFile/poi-3.17-javadoc.jar"/>
-	<classpathentry kind="lib" path="ExeFile/bsh-2.0b4.jar"/>
-	<classpathentry kind="lib" path="ExeFile/bson-3.3.0.jar"/>
-	<classpathentry kind="lib" path="ExeFile/commons-codec-1.9.jar"/>
-	<classpathentry kind="lib" path="ExeFile/commons-logging-1.2.jar"/>
-	<classpathentry kind="lib" path="ExeFile/extentreports-3.0.6.jar"/>
-	<classpathentry kind="lib" path="ExeFile/freemarker-2.3.23.jar"/>
-	<classpathentry kind="lib" path="ExeFile/httpclient-4.5.2.jar"/>
-	<classpathentry kind="lib" path="ExeFile/httpcore-4.4.4.jar"/>
-	<classpathentry kind="lib" path="ExeFile/httpmime-4.5.2.jar"/>
-	<classpathentry kind="lib" path="ExeFile/jcommander-1.48.jar"/>
-	<classpathentry kind="lib" path="ExeFile/jsoup-1.9.2.jar"/>
-	<classpathentry kind="lib" path="ExeFile/mongodb-driver-3.3.0.jar"/>
-	<classpathentry kind="lib" path="ExeFile/mongodb-driver-core-3.3.0.jar"/>
-	<classpathentry kind="lib" path="ExeFile/testng-6.9.10.jar"/>
-	<classpathentry kind="lib" path="extentJar241/extentreports-2.41.2-javadoc.jar"/>
-	<classpathentry kind="lib" path="extentJar241/extentreports-2.41.2-sources.jar"/>
-	<classpathentry kind="lib" path="extentJar241/extentreports-2.41.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

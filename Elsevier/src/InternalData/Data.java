@@ -11,7 +11,7 @@ public interface Data
 	
 	final String firstname ="rahul";
 	final String lastname ="kumar";
-	final String emailaddess="pardee@gmail.com";
+	final String emailaddess="pardeep@gmail.com";
 	final String passwrd="infopro@123";
 	final String cpasswrd="infopro@123";
 	final String orgname="compunnel";
@@ -26,4 +26,6 @@ public interface Data
 	final String company="jobkart";
 	final String Guestemail="test107@gmail.com";
 	final String isbn="9780323636360";
+	final String ebook="Atlas of Orthoses and Assistive Devices E-Book , 5th Edition";
+	
 }

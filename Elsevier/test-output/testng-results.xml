@@ -1,34 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
     <line>
-      <![CDATA[suite is executed Wed Dec 11 17:30:34 IST 2019]]>
+      <![CDATA[suite is executed Tue Feb 04 16:19:02 IST 2020]]>
     </line>
     <line>
       <![CDATA[chrome Launched]]>
     </line>
     <line>
-      <![CDATA[https://www.store.elsevierhealth.com/asia/ url is navigated]]>
+      <![CDATA[http://apac2.compunnel.com/asia/ url is navigated]]>
     </line>
     <line>
-      <![CDATA[ApplyDiscountCoupon script execustion startsWed Dec 11 17:30:47 IST 2019]]>
+      <![CDATA[ForgetPassword script execustion startsTue Feb 04 16:19:16 IST 2020]]>
     </line>
     <line>
-      <![CDATA[My Account]]>
-    </line>
-    <line>
-      <![CDATA[ApplyDiscountCoupon script is passed]]>
+      <![CDATA[ForgetPassword script is passed]]>
     </line>
     <line>
       <![CDATA[browser closed]]>
     </line>
   </reporter-output>
-  <suite name="Suite" duration-ms="58184" started-at="2019-12-11T17:30:34 IST" finished-at="2019-12-11T17:31:32 IST">
+  <suite name="Suite" duration-ms="118237" started-at="2020-02-04T10:49:02Z" finished-at="2020-02-04T10:51:00Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="58184" started-at="2019-12-11T17:30:34 IST" finished-at="2019-12-11T17:31:32 IST">
-      <class name="Script.UserProductPurchase">
-        <test-method status="PASS" signature="precondition(java.lang.String, java.lang.String)[pri:0, instance:Script.UserProductPurchase@5a8806ef]" name="precondition" is-config="true" duration-ms="12837" started-at="2019-12-11T17:30:34 IST" finished-at="2019-12-11T17:30:47 IST">
+    <test name="Test" duration-ms="118237" started-at="2020-02-04T10:49:02Z" finished-at="2020-02-04T10:51:00Z">
+      <class name="Script.CreateUser">
+        <test-method status="PASS" signature="precondition(java.lang.String, java.lang.String)[pri:0, instance:Script.CreateUser@3e6fa38a]" name="precondition" is-config="true" duration-ms="14421" started-at="2020-02-04T16:19:02Z" finished-at="2020-02-04T16:19:16Z">
           <params>
             <param index="0">
               <value>
@@ -37,7 +34,7 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[https://www.store.elsevierhealth.com/asia/]]>
+                <![CDATA[http://apac2.compunnel.com/asia/]]>
               </value>
             </param>
           </params>
@@ -46,31 +43,25 @@
               <![CDATA[chrome Launched]]>
             </line>
             <line>
-              <![CDATA[https://www.store.elsevierhealth.com/asia/ url is navigated]]>
+              <![CDATA[http://apac2.compunnel.com/asia/ url is navigated]]>
             </line>
           </reporter-output>
         </test-method> <!-- precondition -->
-        <test-method status="PASS" signature="ApplyDiscountCoupon()[pri:5, instance:Script.UserProductPurchase@5a8806ef]" name="ApplyDiscountCoupon" duration-ms="40624" started-at="2019-12-11T17:30:47 IST" finished-at="2019-12-11T17:31:28 IST">
+        <test-method status="PASS" signature="ForgetPassword()[pri:2, instance:Script.CreateUser@3e6fa38a]" name="ForgetPassword" duration-ms="102565" started-at="2020-02-04T16:19:16Z" finished-at="2020-02-04T16:20:59Z">
           <reporter-output>
             <line>
-              <![CDATA[ApplyDiscountCoupon script execustion startsWed Dec 11 17:30:47 IST 2019]]>
-            </line>
-            <line>
-              <![CDATA[My Account]]>
-            </line>
-            <line>
-              <![CDATA[ApplyDiscountCoupon script is passed]]>
+              <![CDATA[ForgetPassword script is passed]]>
             </line>
           </reporter-output>
-        </test-method> <!-- ApplyDiscountCoupon -->
-        <test-method status="PASS" signature="postcondition()[pri:0, instance:Script.UserProductPurchase@5a8806ef]" name="postcondition" is-config="true" duration-ms="4678" started-at="2019-12-11T17:31:28 IST" finished-at="2019-12-11T17:31:32 IST">
+        </test-method> <!-- ForgetPassword -->
+        <test-method status="PASS" signature="postcondition()[pri:0, instance:Script.CreateUser@3e6fa38a]" name="postcondition" is-config="true" duration-ms="1189" started-at="2020-02-04T16:20:59Z" finished-at="2020-02-04T16:21:00Z">
           <reporter-output>
             <line>
               <![CDATA[browser closed]]>
             </line>
           </reporter-output>
         </test-method> <!-- postcondition -->
-      </class> <!-- Script.UserProductPurchase -->
+      </class> <!-- Script.CreateUser -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

@@ -3,6 +3,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 import org.openqa.selenium.By;
@@ -22,6 +23,7 @@ import Page.object.AddressBookPage;
 import Page.object.BasePage;
 import Page.object.CreateNewCustomerAccountPage;
 import Page.object.EditAddressPage;
+import Page.object.ForgetPasswordPage;
 import Page.object.GuestUserCheckOutPage;
 import Page.object.HomePage;
 import Page.object.LoginPage;
@@ -46,6 +48,7 @@ public class taskfeature
    MedicinePage mp;
    Utility tm;
    SearchResultPage srp;
+   ForgetPasswordPage fpp;
    public taskfeature(WebDriver driver)
    {
 	   this.driver=driver;
@@ -60,6 +63,7 @@ public class taskfeature
 	   mp= new MedicinePage(driver);
 	   tm = new Utility(driver);
 	   srp=new SearchResultPage(driver);
+	   fpp= new ForgetPasswordPage(driver);
    }
    
    public void ValidLogin(String username , String password) throws Exception
@@ -183,6 +187,7 @@ public class taskfeature
 		   
 		}
 	   jre.executeScript("window.scrollBy(0,-300)");
+	   Thread.sleep(10000);
 	   wait.until(ExpectedConditions.visibilityOf(bp.getCartvalue10()));
 	   
 	   bp.getMycartIcon().click();
@@ -378,7 +383,7 @@ public void EditBillingAddress(String username, String password,String street,St
 		   Thread.sleep(3000);
 		   tm.clearCart();
 		}
-	*/
+*/
 	   Thread.sleep(3000);
 	   tm.searchFuc(product);
 	   Thread.sleep(3000);
@@ -401,10 +406,10 @@ public void EditBillingAddress(String username, String password,String street,St
 	  double finlprice = qty*basefare1;
 	  
 	  double val2 = finlprice/4;
- //   System.out.println("dicounted price "+val2);
+//   System.out.println("dicounted price "+val2);
       
       double afterdiscount = basefare1-val2;
- //     System.out.println(afterdiscount);
+//     System.out.println(afterdiscount);
       
       DecimalFormat df2 = new DecimalFormat("$#.##");
 //      System.out.println("Two decimal :- "+df2.format(afterdiscount)); 
@@ -418,11 +423,97 @@ public void EditBillingAddress(String username, String password,String street,St
     Iterator<WebElement> itr = numberOfSubtotal.iterator();
       
     String subtotalval = itr.next().getText();
-//    System.out.println("subtotal value "+subtotalval);
+//  System.out.println("subtotal value "+subtotalval);
     Assert.assertEquals(discountedvalue, subtotalval);
     
    
    }
+  public void GuestUserNotBuyEbook(String Ebook) throws Exception
+   {
+	   tm.searchFuc(Ebook);
+	   srp.getFirstProductOnSearch().click();
+//	   Assert.assertEquals(bp.getProductTitle().getText(), product);
+	   bp.getAddToCartbtn().click();
+	   bp.getMycartIcon().click();
+	   bp.getViewCartBtn().click();
+	   Thread.sleep(1000);
+	   bp.getProceedTochckBtn().click();
+	   Thread.sleep(3000);
+	   Assert.assertEquals("Customer Login", driver.getTitle());
+   }
+  public void Forgetpassword() throws InterruptedException
+  {
+	   lp.getUsrico().click();
+	   lp.getSignInbtn().click();
+	   Thread.sleep(3000);
+	   lp.getForgetPassbtn().click();
+	   Thread.sleep(2000);
+	   fpp.getEmailid().sendKeys("kapil.bhardwaj@infoprolearning.com");
+	   
+	   fpp.getSubmit().click();
+	   
+	   
+	   driver.get("https://login.microsoftonline.com/");
+	   Thread.sleep(5000);
+	   
+	   driver.findElement(By.id("i0116")).sendKeys("kapil.bhardwaj@infoprolearning.com");
+	   driver.findElement(By.id("idSIButton9")).click();
+	   Thread.sleep(5000);
+	   driver.findElement(By.id("i0118")).sendKeys("Comp@0989");
+	   
+	   driver.findElement(By.id("idSIButton9")).click();
+	   driver.findElement(By.id("idBtn_Back")).click();
+	   Thread.sleep(5000);
+	   driver.findElement(By.xpath("//div[text()=' Outlook ']")).click();
+	   Thread.sleep(5000);
+	   Set<String> windowsId = driver.getWindowHandles();
+	   
+	   Iterator<String> itr = windowsId.iterator();
+	   String parent = itr.next();
+	   String child = itr.next();
+	   driver.switchTo().window(child);
+//	   WebDriverWait wait = new WebDriverWait(driver, 30);
+//	   wait.until(ExpectedConditions.visibilityOf( driver.findElement(By.xpath("//span[text()='Junk Email']"))));
+	   driver.findElement(By.xpath("//span[text()='Junk Email']")).click();
+	   Thread.sleep(5000);
+	   driver.findElement(By.xpath("//span[starts-with(text(),'Password Reset Confirmation for   kapil bhardwaj')][1]")).click();
+	   driver.findElement(By.linkText("Set a New Password")).click();
+	   
+	   Thread.sleep(5000);
+	   
+	   Set<String> sessions = driver.getWindowHandles();
+	   Iterator<String> itr1 = sessions.iterator();
+	   String first = itr1.next();
+	   System.out.println(first);
+	   String second = itr1.next();
+	   System.out.println(second);
+	   
+	   String third = itr1.next();
+	   driver.switchTo().window(third);
+	  
+	   
+	   
+	   Random ran = new Random();
+	   int passnum = ran.nextInt();
+	   
+	   String newpass = "Infopro"+passnum;
+	   System.out.println(newpass);
+			  
+	   Thread.sleep(5000);
+	   driver.findElement(By.id("password")).sendKeys(newpass);
+	   driver.findElement(By.id("password-confirmation")).sendKeys(newpass);
+	   driver.findElement(By.xpath("//button/span[text()='Set a New Password']")).submit();
+	   Thread.sleep(5000);
+	   
+	 
+	   driver.findElement(By.id("email")).sendKeys("kapil.bhardwaj@infoprolearning.com");
+	   driver.findElement(By.id("pass")).sendKeys(newpass);
+	   driver.findElement(By.id("send2")).submit();
+	   
+	   Thread.sleep(20000);
+	   
+	   
+  }
    
 }
    

@@ -8,7 +8,7 @@ import feature.taskfeature;
 
 public class UserProductPurchase extends baseLib implements Data
 {
-/*	@Test(priority = 1)
+	@Test(priority = 1)
 	public void validUserProductPurchase() throws Exception
 	{
 		taskfeature tf = new taskfeature(driver);
@@ -33,10 +33,17 @@ public class UserProductPurchase extends baseLib implements Data
 		taskfeature tf = new taskfeature(driver);
 		
 	}
-*/	@Test(priority = 5)
+	@Test(priority = 5)
 	public void ApplyDiscountCoupon() throws Exception
 	{
 		taskfeature tf = new taskfeature(driver);
 		tf.DiscountCoupon(username, password, product);
 	}
+	@Test(priority = 6)
+	public void GuestUserNotPurchaseEBook() throws Exception 
+	{
+		taskfeature tf = new taskfeature(driver);
+		tf.GuestUserNotBuyEbook(ebook);
+	}
+	
 }
